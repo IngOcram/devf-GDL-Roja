@@ -29,26 +29,42 @@
 //console.log(persona2.mayorEdad);
 
 
-class personaI {
-    constructor(nombre, edad, peso, altura){
-        this.nombre = nombre
-        this.edad = edad
-        this.peso = peso
-        this.altura = altura
+//class personaI {
+//    constructor(nombre, edad, peso, altura){
+//        this.nombre = nombre
+//        this.edad = edad
+//        this.peso = peso
+//        this.altura = altura
+//    }
+//    calcularIMC(){
+//        return this.peso / (this.altura ** 2)
+//    }
+//    esMayor(){
+//        return this.edad >= 33 ? 'si' : 'no'
+//    }
+//    complirAnos(){
+//        this.edad += 1
+//    }
+//}
+
+//let marco = new personaI('marco', 17, 70, 1.70)
+//console.log(marco.calcularIMC());
+//console.log(`marco es mayor de edad? ${marco.esMayor()}`);
+//marco.complirAnos()
+
+class cuadrado {
+    constructor(ladob, ladoa){
+        this.ladob = ladob
+        this.ladoa = ladoa
     }
-    calcularIMC(){
-        return this.peso / (this.altura ** 2)
+    calcularArea(){
+        return this.ladoa * this.ladob
     }
-    esMayor(){
-        return this.edad >= 33 ? 'si' : 'no'
+    calcularPermetro(){
+        return this.ladoa * 4
     }
-    complirAnos(){
-        this.edad += 1
-    }
+    
 }
 
-let marco = new personaI('marco', 17, 70, 1.70)
-console.log(marco.calcularIMC());
-console.log(`marco es mayor de edad? ${marco.esMayor()}`);
-marco.complirAnos()
+
 

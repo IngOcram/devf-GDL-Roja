@@ -53,5 +53,41 @@ for(let n=0; arrPares.length<20; n++){
 }
 console.log(arrPares);
 
-console.log(arrPares.reverse);
+ //console.log(arrPares.reverse);
 
+ function invertArrray (input){
+     let rev = arryInv = [];
+     for (let i = input.length-1; i >= 0; i--){
+         rev.push(input[i]);
+     }
+     console.log(rev);
+ }
+
+ console.log(invertArrray(arrPares));
+
+var c = 25;
+var j = 2;
+var numerosPrimos = [];
+
+for(; j < c; j++){
+
+    if (primo(j)) {
+        numerosPrimos.push(j);
+    }
+  }
+
+console.log(numerosPrimos);
+
+function primo(numero) {
+    for (var i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            return false;
+        }
+    }
+return numero !==1;
+}
+
+function sumaNumeros (n){
+    for (let x = 1; )
+
+}

@@ -86,8 +86,3 @@ function primo(numero) {
     }
 return numero !==1;
 }
-
-function sumaNumeros (n){
-    for (let x = 1; )
-
-}

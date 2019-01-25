@@ -86,4 +86,10 @@ class rectangulo extends Figura{
     }
 }
 
+class triangulo extends Figura{
+    constructor(ladoa, ladob){
+        super(ladoa, ladob)
+    }
+    
+}
 

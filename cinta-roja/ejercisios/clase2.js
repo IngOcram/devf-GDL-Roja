@@ -61,7 +61,7 @@ class Animal {
 
 class Perro1 extends Animal{
     constructor(raza, edad, color, nombre, dueno){
-        super(raza, edad, colo, nombre)
+        super(raza, edad, color, nombre)
         // mandar todos los atributos que queremos a la clase padre
         this.dueno = dueno
     }

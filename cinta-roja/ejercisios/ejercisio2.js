@@ -52,19 +52,38 @@
 //console.log(`marco es mayor de edad? ${marco.esMayor()}`);
 //marco.complirAnos()
 
-class cuadrado {
+class Figura {
     constructor(ladob, ladoa){
         this.ladob = ladob
         this.ladoa = ladoa
+    
+
     }
-    calcularArea(){
+}
+
+class Cuadrado extends Figura{
+    constructor(ladoa, ladob){
+        super(ladoa, ladob)
+    }
+    area(){
         return this.ladoa * this.ladob
     }
-    calcularPermetro(){
+    perimetro(){
         return this.ladoa * 4
     }
     
 }
 
+class rectangulo extends Figura{
+    constructor(ladoa, ladob){
+        super(ladoa, ladob)
+    }
+    areaRect(){
+        return this.ladoa * ladob
+    }
+    perimetroRect(){
+        return 2 * (this.ladoa + this.ladob)
+    }
+}
 
 

@@ -1,0 +1,14 @@
+{
+  "name": "apimarco",
+  "version": "1.0.0",
+  "description": "ejercisio de APIs",
+  "main": "clase5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marco Flores",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

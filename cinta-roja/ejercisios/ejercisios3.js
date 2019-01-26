@@ -30,20 +30,22 @@
 //recibeCallback(miResta)
 //recibeCallback(miMultiplicador)
 
-// //function calc (num1, num2, operacion){
-//     console.log('Bienvenidos a su calculadora');
-//     return operacion(num1, num2)
-// }
+function calc (num1, num2, operacion){
+     console.log('Bienvenidos a su calculadora');
+     return operacion(num1, num2)
+ }
 
-// let suma = (n1, n2) => n1 + n2 
-// let resta = (n1, n2) => n1 - n2
-// let multiplicar = (n1, n2) => n1 * n2
-// let divisor =  (n1, n2) => n1 / n2
 
-// console.log(calc(2, 7, suma))
-// console.log(calc(98, 20, resta))
-// console.log(calc(2, 7, multiplicar))
-// console.log(calc(10, 5, divisor))
+ let suma = (n1, n2) => n1 + n2 
+ let resta = (n1, n2) => n1 - n2
+ let multiplicar = (n1, n2) => n1 * n2
+ let divisor =  (n1, n2) => n1 / n2
+
+ console.log(calc(2, 7, suma))
+ console.log(calc(98, 20, resta))
+ console.log(calc(2, 7, multiplicar))
+ console.log(calc(10, 5, divisor))
+
 
 //function palabra (word, callback){
 //    console.log(`Mi palabra es ${word}`)

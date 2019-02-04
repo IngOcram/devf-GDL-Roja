@@ -1,44 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 let servidor = express()
+const rutaLibros = require('./rutas/books.js')
 
 
 servidor.use(bodyParser.json())
-
+servidor.use('/libros', rutaLibros)
 
 servidor.get('/', (req,res) => {
     console.log(req)
     res.send("Hola")
-})
-
-servidor.post('/libros', (req,res) => {
-    //Parsear informacion recibida
-    //guardarla en la BD
-    //Responder con un mensaje de error o de success
-    console.log("estamos en el post de libros");
-    res.send(200)
-} )
-
-servidor.get('/libros', (req,res) => {
-    //Regresar todos los libros a la base de datos
-    console.log("estamos en el post de libros");
-    res.send(200)
-} )
-
-servidor.get('/libros/:id', (req,res) => {
-    //regresar solo el libro con el id recibido
-    console.log("estamos en el GET especifico")
-    res.send(200)
-})
-
-servidor.put('/libros/:idlibro', (req,res) => {
-    console.log("estamos en el put de libros");
-    res.send(200)
-})
-
-servidor.delete('/libros/:idlibro', (req,res) => {
-    console.log("estamos en el delete de libros");
-    res.send(200)
 })
 
 //proccess.env contiene las variables del proceso

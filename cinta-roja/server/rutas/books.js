@@ -34,6 +34,10 @@ router.post('/', (req,res) => {
 
 
 router.put('/:idlibro', (req,res) => {
+    // actualizar la informacion almacenada
+    let updateLibro = req.body
+    //actualizar la informacion del libro
+    
     console.log("estamos en el put de libros");
     res.send(200)
 })

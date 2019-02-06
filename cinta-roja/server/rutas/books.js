@@ -1,10 +1,14 @@
 const express = require('express')
 const router = express.Router()
 const bodyParser = require('body-parser')
-
+const mongoose = require('mongoose')
+const LibroModel = require('../models/libroModel.js')
 router.use(bodyParser.json())
 
-let libros = ['la tregua', 'el principito']
+let libros = [
+    {titulo: 'la tregua'}, 
+    {titulo: 'el principito'}
+ ]
 
 
 router.get('/', (req, res) => {
@@ -24,26 +28,39 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req,res) => {
     //Parsear informacion recibida
-    let nuevoLibro = req.body
     //guardarla en la BD
-    libros.push(nuevoLibro)
+    //libros.push(nuevoLibro)
+    //const libro = mongoose.model('libro', {titulo: String});
+    //const nuevoLibro = new libro(req.body);
+    //nuevoLibro.save().then(() => console.log('meow'));
     //Responder con un mensaje de error o de success
     console.log("estamos en el post de libros");
-    res.send(`nuevo libro ${nuevoLibro.titulo}agregado`)
+    let nuevoLibro = new LibroModel(req.body)
+    nuevoLibro.save()
+    .then(() =>{console.log('Libro Agregado')})
+    .catch(() => {console.log('No se puede guardar')})
+    res.send(nuevoLibro)
 } )
-
+// Parametros que se le envian a las callback de las promesas
 
 router.put('/:idlibro', (req,res) => {
-    // actualizar la informacion almacenada
-    let updateLibro = req.body
-    //actualizar la informacion del libro
-    
     console.log("estamos en el put de libros");
-    res.send(200)
+    let id = req.params.idlibro
+    let miLibro = libros[id]
+
+    for(let key in req.body){
+        //console.log(key)
+        miLibro[key] = req.body[key]
+    }
+    libors[id] = miLibro
+   // libros[id] = req.body
+    res.send(libros)
 })
 
 router.delete('/:idlibro', (req,res) => {
     console.log("estamos en el delete de libros");
+    let id = req.params.idlibro
+    libros.splice(id, 1)
     res.send(200)
 })
 

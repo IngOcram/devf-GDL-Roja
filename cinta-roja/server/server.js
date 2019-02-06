@@ -2,10 +2,17 @@ const express = require('express')
 const bodyParser = require('body-parser')
 let servidor = express()
 const rutaLibros = require('./rutas/books.js')
-
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/libreria')
 
 servidor.use(bodyParser.json())
 servidor.use('/libros', rutaLibros)
+
+mongoose.connection.once('open', () =>{
+    console.log("si me puedo conectar la DB");
+}).on('error', () => {
+    console.log("No me puedo conectar a la DB")
+})
 
 servidor.get('/', (req,res) => {
     console.log(req)

@@ -14,7 +14,13 @@ let libros = [
 router.get('/', (req, res) => {
     //Regresar todos los libros de la BD
     console.log("Estamos en el GET de libros");
-    res.send(libros)
+    LibroModel.find((error,libros) => {
+        if (error) {
+            console.log(`hubo un error con el GET a la raiz ${error}`)
+            res.send(400)
+        }
+        res.send(libros)
+    })
   })
 
 router.get('/:id', (req, res) => {
@@ -45,16 +51,34 @@ router.post('/', (req,res) => {
 
 router.put('/:idlibro', (req,res) => {
     console.log("estamos en el put de libros");
-    let id = req.params.idlibro
-    let miLibro = libros[id]
-
-    for(let key in req.body){
+    //let id = req.params.idlibro
+    //let miLibro = libros[id]
+    //for(let key in req.body){
         //console.log(key)
-        miLibro[key] = req.body[key]
-    }
-    libors[id] = miLibro
+    //    miLibro[key] = req.body[key]
+    //}
+    //libors[id] = miLibro
    // libros[id] = req.body
+   let idRecibido = req.params.idlibro
+  // let LibroPut = new LibroModel(req.params.idlibro)
+   LibroModel.findOneAndUpdate(
+       {_id: idRecibido},       //query, las condiciones a revisar para saber que elemento se modificara
+       req.body,                // nuevo valor de ese documento (registro) 
+       {new: true},              //opciones
+        (err,doc, raw) => {     //cb, opcional en caso de querer realizar alguna accion adicional
+            if (err)
+            console.log('error', err);
+            else
+            console.log("No hay error")
+    }
+    )
+   LibroModel.find((error,libros) => {
+    if (error) {
+        console.log(`hubo un error con el GET a la raiz ${error}`)
+        res.send(400)
+    }
     res.send(libros)
+})
 })
 
 router.delete('/:idlibro', (req,res) => {

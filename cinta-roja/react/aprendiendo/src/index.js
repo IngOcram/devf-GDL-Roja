@@ -5,8 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Persona from './components/Persona';
 import Lista from './components/Lista';
+import Suma from './components/Suma';
 
-ReactDOM.render(<Lista />, document.getElementById('root'));
+ReactDOM.render(<Suma />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -4,12 +4,27 @@ import Persona from './Persona'
 
 
 class Lista extends Component {
+
+    state = {
+        load: false
+    }
+
+    //add = () => { this.setState( {load: true} ) }
+    //remove = () => { this.setState( {load: false} ) }
+
+    toggle = () =>  {this.setState ( {load: !this.state.loadload} ) }
+
+
     render(){
         return(
             <React.Fragment>
-            <Persona name = "Lau" time="9" />
-            <Persona name = "Charly"/>
-            <Persona name = "Mich" time="2" />
+
+{/* <button type="button" onclick= {this.add} disabled= {this.state.load} >ADD</button>
+        <button type="button" onclick= {this.remove} disabled = {!this.state.load}>REMOVE</button>*/}
+            <button type="button" onClick= {this.toggle} >CAMBIO</button>
+
+            {this.state.load ? < numero/> : null}
+            
             </React.Fragment>
         )
         

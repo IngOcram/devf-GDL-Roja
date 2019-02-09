@@ -6,8 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import Persona from './components/Persona';
 import Lista from './components/Lista';
 import Random from './components/Random';
+import Rutas from './components/Rutas';
 
-ReactDOM.render(<Random />, document.getElementById('root'));
+ReactDOM.render(<Rutas />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

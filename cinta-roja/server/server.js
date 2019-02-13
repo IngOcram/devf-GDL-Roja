@@ -1,10 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 let servidor = express()
 const rutaLibros = require('./rutas/books.js')
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/libreria')
 
+
+servidor.use(cors())
 servidor.use(bodyParser.json())
 servidor.use('/libros', rutaLibros)
 

@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import {BrowserRouter as Router, NavLink } from 'react-router-dom'
 import Route from 'react-router-dom/Route'
 import Show from './Show';
+import PostReact from './PostReact'
+
+
 
 
 class MainLibros extends Component {
@@ -17,6 +20,7 @@ class MainLibros extends Component {
                 
                 
                 <Route path= "/show" exact component= {Show} />
+                <Route path= "/add" exact component= {PostReact} />
                 
                 </div>
             
